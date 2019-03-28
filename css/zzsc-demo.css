@@ -12,7 +12,6 @@
 
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -59,6 +58,7 @@ a:hover,a:focus{color:#74777b;}
 .zzsc-container{
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative; 
 }
 
 .bgcolor-1 { background: #f0efee; }
@@ -74,142 +74,19 @@ a:hover,a:focus{color:#74777b;}
 .bgcolor-11{ background: #3755ad; color: #fff;}/*dark blue*/
 .bgcolor-12{ background: #3498DB; color: #fff;}/*light blue*/
 .bgcolor-20{ background: #494A5F;color: #D5D6E2;}
-/* Header */
-.zzsc-header{
-	padding: 1em 190px 1em;
-	letter-spacing: -1px;
-	text-align: center;
-	background: #66677c;
-}
-.zzsc-header h1 {
-	color: #D5D6E2;
-	font-weight: 600;
-	font-size: 2em;
-	line-height: 1;
-	margin-bottom: 0;
-	font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-}
-.zzsc-header h1 span {
-	font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-	display: block;
-	font-size: 60%;
-	font-weight: 400;
-	padding: 0.8em 0 0.5em 0;
-	color: #c3c8cd;
-}
-/*nav*/
-.zzsc-demo a{color: #fff;text-decoration: none;}
-.zzsc-demo{width: 100%;padding-bottom: 1.2em;}
-.zzsc-demo a{display: inline-block;margin: 0.5em;padding: 0.6em 1em;border: 3px solid #fff;font-weight: 700;}
-.zzsc-demo a:hover{opacity: 0.6;}
-.zzsc-demo a.current{background:#1d7db1;color: #fff; }
-/* Top Navigation Style */
-.zzsc-links {
-	position: relative;
-	display: inline-block;
-	white-space: nowrap;
-	font-size: 1.5em;
-	text-align: center;
+
+.tag-cloud {
+    width: 80%;
+    height: 80%;
+    margin:0px auto;
+    float:left;
 }
 
-.zzsc-links::after {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	margin-left: -1px;
-	width: 2px;
-	height: 100%;
-	background: #dbdbdb;
-	content: '';
-	-webkit-transform: rotate3d(0,0,1,22.5deg);
-	transform: rotate3d(0,0,1,22.5deg);
-}
-
-.zzsc-icon {
-	display: inline-block;
-	margin: 0.5em;
-	padding: 0em 0;
-	width: 1.5em;
-	text-decoration: none;
-}
-
-.zzsc-icon span {
-	display: none;
-}
-
-.zzsc-icon:before {
-	margin: 0 5px;
-	text-transform: none;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-family: 'icomoon';
-	line-height: 1;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-}
-/* footer */
-.zzsc-footer{width: 100%;padding-top: 10px;}
-.zzsc-small{font-size: 0.8em;}
-.center{text-align: center;}
-/****/
-.related {
-	color: #fff;
-	background: #494A5F;
-	text-align: center;
-	font-size: 1.25em;
-	padding: 0.5em 0;
-	overflow: hidden;
-}
-
-.related > a {
-	vertical-align: top;
-	width: calc(100% - 20px);
-	max-width: 340px;
-	display: inline-block;
-	text-align: center;
-	margin: 20px 10px;
-	padding: 25px;
-	font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-}
-.related a {
-	display: inline-block;
-	text-align: left;
-	margin: 20px auto;
-	padding: 10px 20px;
-	opacity: 0.8;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-	-webkit-backface-visibility: hidden;
-}
-
-.related a:hover,
-.related a:active {
-	opacity: 1;
-}
-
-.related a img {
-	max-width: 100%;
-	opacity: 0.8;
-	border-radius: 4px;
-}
-.related a:hover img,
-.related a:active img {
-	opacity: 1;
-}
-.related h3{font-family: "Microsoft YaHei", sans-serif;}
-.related a h3 {
-	font-weight: 300;
-	margin-top: 0.15em;
-	color: #fff;
-}
-/* icomoon */
-.icon-zzsc-home-outline:before {
-	content: "\e5000";
-}
-
-.icon-zzsc-arrow-forward-outline:before {
-	content: "\e5001";
+.tag-single-table {
+    text-align:right;
+    margin: 0px auto;
+    font:normal 14px/24px 'MicroSoft YaHei'; 
+	float:right;
 }
 
 @media screen and (max-width: 50em) {
@@ -220,7 +97,6 @@ a:hover,a:focus{color:#74777b;}
         font-size:2em;
     }
 }
-
 
 @media screen and (max-width: 40em) {
 	.zzsc-header h1 {
@@ -233,3 +109,131 @@ a:hover,a:focus{color:#74777b;}
         font-size:1.2em;
     }
 }
+
+/* The side navigation menu */
+.sidenav {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 1.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+	color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+	transition: margin-left 1.5s;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+  }
+
+  /* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  /* Style the tab content */
+.tabcontent {
+	float: center;
+	padding: 50px 50px;
+	border: 1px solid rgb(250, 0, 0);
+	width: 100%;
+	height: 100%;
+	display: none;
+  }
+  .tabcontent:first-child {
+	  display: inherit;
+  }
+
+  .center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+/**
+
+button
+
+*/
+
+.button {
+	display: block;
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  
+  .button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+  }
+  
+  .button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  
+  .button:hover span {
+	padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
