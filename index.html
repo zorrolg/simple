@@ -8,56 +8,112 @@
 	<title>分组系统</title>
 	<link rel="stylesheet" type="text/css" href="css/zzsc-demo.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
-	<style type="text/css">
-		#tag-cloud {
-			width: 80%;
-			height: 80%;
-			margin: 0px auto;
-		}
-	</style>
 </head>
 
 <body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#" onclick="openCity(event, 'Home'); return false;">Home</a>
+		<a href="#" onclick="openCity(event, 'Team'); return false;">Team</a>
+		<a href="#" onclick="openCity(event, 'Setting'); return false;">Setting</a>
+		<a href="#" onclick="openCity(event, 'Result'); return false;">Result</a>
+	</div>
 
-	<div class="zzsc-container">
-		<div id='tag-cloud'></div>
+	<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+	<div id="main">
+		<div id="Home" class="tabcontent">
+			<img src="https://www.w3schools.com/howto/img_paris.jpg" alt="Paris" class="center">
+			<button class="button" onclick="openNav()"><span>Hover </span></button>
+		</div>
+
+		<div id="Team" class="tabcontent">
+			<div class="zzsc-container">
+				<div id='tag-cloud'></div>
+			</div>
+		</div>
+
+		<div id="Setting" class="tabcontent">
+			<h3>Setting</h3>
+			<p>Setting is the capital of Japan.</p>
+		</div>
+
+		<div id="Result" class="tabcontent">
+				<h2 style="text-align:center">分组结果</h2>
+				<p style="text-align:center">Resize the browser window to see the effect.</p>
+				
+				<div class="columns">
+				  <ul class="price">
+					<li class="header">Basic</li>
+					<li class="grey">$ 9.99 / year</li>
+					<li>10GB Storage</li>
+					<li>10 Emails</li>
+					<li>10 Domains</li>
+					<li>1GB Bandwidth</li>
+					<li class="grey"><a href="#" class="button">Sign Up</a></li>
+				  </ul>
+				</div>
+				
+				<div class="columns">
+				  <ul class="price">
+					<li class="header" style="background-color:#4CAF50">Pro</li>
+					<li class="grey">$ 24.99 / year</li>
+					<li>25GB Storage</li>
+					<li>25 Emails</li>
+					<li>25 Domains</li>
+					<li>2GB Bandwidth</li>
+					<li class="grey"><a href="#" class="button">Sign Up</a></li>
+				  </ul>
+				</div>
+				
+				<div class="columns">
+				  <ul class="price">
+					<li class="header">Premium</li>
+					<li class="grey">$ 49.99 / year</li>
+					<li>50GB Storage</li>
+					<li>50 Emails</li>
+					<li>50 Domains</li>
+					<li>5GB Bandwidth</li>
+					<li class="grey"><a href="#" class="button">Sign Up</a></li>
+				  </ul>
+				</div>
+				
+		</div>
 	</div>
 	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="js/jquery.svg3dtagcloud.js"></script>
 	<script src="js/jquery.table2excel.min.js"></script>
 	<script>
+		var entries = [
+			{ label: '中文名称很长很长', url: '#', target: '_top' },
+			{ label: '中文名称订单撒发生的很长很', url: '#', target: '_top' },
+			{ label: '的地方是离开的减肥了盛大开放', url: '#', target: '_top' },
+			{ label: '胜多负少的发送到', url: '#', target: '_top' },
+			{ label: '撒地方撒旦法师的 Menu', url: '#', target: '_top' },
+			{ label: '是的发生的', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '是打发斯蒂芬.js', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: 'Form 撒地方撒地方撒地方撒地方撒地方', url: '#', target: '_top' },
+			{ label: 'JS 阿士大夫士大夫撒地方撒地方', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '各行业和地方挺好', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '发到公司的分公司', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: ' 地方广东省分公司是', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '水电费公司分公司', url: '#', target: '_top' },
+			{ label: '水电费公司发生大幅度发', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '是电饭锅水电费鼎折覆餗', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '的范德萨发顺丰到付', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '士大夫撒旦', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '的萨芬撒地方撒地方撒旦', url: 'https://github.com/', target: '_top' },
+			{ label: '阿萨德法师打发士大夫', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿斯顿发士大夫撒地方撒地方 View', url: '#', target: '_top' },
+			{ label: 'jsPerf', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿斯蒂芬撒地方撒旦法师的', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿萨德发斯蒂芬撒地方', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '打发士大夫撒地方撒地方.js', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿士大夫撒旦法师打', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿斯顿发士大夫撒旦', url: 'http://www.xwcms.net/', target: '_top' },
+			{ label: '阿士大夫士大夫二二', url: '#', target: '_top' },
+			{ label: '韦曲翁群翁群无若', url: '#', target: '_top' }
+		];
 		$(document).ready(function () {
-			var entries = [
-				{ label: '中文名称很长很长', url: '#', target: '_top' },
-				{ label: '中文名称订单撒发生的很长很', url: '#', target: '_top' },
-				{ label: '的地方是离开的减肥了盛大开放', url: '#', target: '_top' },
-				{ label: '胜多负少的发送到', url: '#', target: '_top' },
-				{ label: '撒地方撒旦法师的 Menu', url: '#', target: '_top' },
-				{ label: '是的发生的', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '是打发斯蒂芬.js', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: 'Form 撒地方撒地方撒地方撒地方撒地方', url: '#', target: '_top' },
-				{ label: 'JS 阿士大夫士大夫撒地方撒地方', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '各行业和地方挺好', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '发到公司的分公司', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: ' 地方广东省分公司是', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '水电费公司分公司', url: '#', target: '_top' },
-				{ label: '水电费公司发生大幅度发', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '是电饭锅水电费鼎折覆餗', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '的范德萨发顺丰到付', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '士大夫撒旦', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '的萨芬撒地方撒地方撒旦', url: 'https://github.com/', target: '_top' },
-				{ label: '阿萨德法师打发士大夫', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿斯顿发士大夫撒地方撒地方 View', url: '#', target: '_top' },
-				{ label: 'jsPerf', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿斯蒂芬撒地方撒旦法师的', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿萨德发斯蒂芬撒地方', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '打发士大夫撒地方撒地方.js', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿士大夫撒旦法师打', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿斯顿发士大夫撒旦', url: 'http://www.xwcms.net/', target: '_top' },
-				{ label: '阿士大夫士大夫二二', url: '#', target: '_top' },
-				{ label: '韦曲翁群翁群无若', url: '#', target: '_top' }
-			];
 			var settings = {
 				entries: entries,
 				width: 640,
@@ -70,7 +126,7 @@
 				opacityOut: 0.05,
 				opacitySpeed: 6,
 				fov: 800,
-				speed: 4.0,
+				speed: 0,
 				fontFamily: 'Oswald, Arial, sans-serif',
 				fontSize: '15',
 				fontColor: '#fff',
@@ -79,31 +135,64 @@
 				fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
 				fontToUpperCase: true
 			};
-			//var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-			$('#tag-cloud').svg3DTagCloud(settings);
+			//$('#tag-cloud').svg3DTagCloud(settings);
+		});
+		function start() {
+			var svg3DTagCloud = new SVG3DTagCloud(document.getElementById('tag-cloud'), settings);
+			// svg3DTagCloud.settings.speed = 4.0;
 			var ind = 0;
-			let intervalId = setInterval(function() {
-				console.log(entries[ind].label, ind);
+			let that = this;
+			let intervalId = setInterval(function () {
+				console.log(that.entries[ind].label, ind);
 				window.removeEntry(ind++);
-				if (ind == entries.length) {
+				if (ind == that.entries.length) {
 					clearInterval(intervalId);
 				}
-	// 			console.log(index);
-    //   removeEntries.push(index);
-    //   let entryId = entry.index;
-    //   console.log("in render entryId : {}",entryId);
-    //   if (removeEntries.indexOf(entryId) != -1) {
-    //     entryHolder.splice(entryId, 1);
-    //     removeEntries.length = 0;
-    //     svg.removeChild(entry,link);
-    //     continue;
-    //   }
-			}, 2000);
-		});
+			}, 1000);
+		}
+
+		function show() {
+
+		}
+
+		function move() {
+
+		}
+		function openCity(evt, cityName) {
+			// Declare all variables
+			var i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+
+			// Show the current tab, and add an "active" class to the link that opened the tab
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+
+		/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.body.style.backgroundColor = "white";
+		}
 	</script>
-	<div style="text-align:left;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-		<p>分组1</p>
-	</div>
 </body>
 
 </html>
